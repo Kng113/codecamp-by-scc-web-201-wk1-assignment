@@ -435,17 +435,6 @@ Commit + push.
 
 ---
 
-## 🧩 TA Review Checklist (internal)
-
-- [ ] Correct repo; small, progressive commits/PRs
-- [ ] Ops are **pure** (no DOM), applied via `selection.ts` helpers
-- [ ] FloatingBar wired; analytics ops show toast without mutating text
-- [ ] Preview markdown-lite works; no XSS (escape HTML in user text!)
-- [ ] A11y & Lighthouse targets met; mobile tested
-- [ ] Live URL works on mobile network; README + video present
-
----
-
 ## 🧪 Manual Test Plan
 
 Create a file `lib/textlab.test.plan.md` with tables for each op:
