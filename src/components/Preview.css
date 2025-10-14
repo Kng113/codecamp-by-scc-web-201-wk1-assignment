@@ -1,0 +1,90 @@
+.preview-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 100%;
+}
+
+.preview-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.preview-content {
+  flex: 1;
+  min-height: 400px;
+  padding: 2rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: white;
+  overflow-y: auto;
+  line-height: 1.7;
+}
+
+.preview-content p {
+  margin-bottom: 1rem;
+}
+
+.preview-content p:last-child {
+  margin-bottom: 0;
+}
+
+.preview-empty {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* Future markdown styles (students will add these) */
+.preview-content h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.preview-content h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.preview-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.preview-content strong {
+  font-weight: 600;
+}
+
+.preview-content em {
+  font-style: italic;
+}
+
+.preview-content code {
+  font-family: 'Courier New', monospace;
+  background-color: var(--bg-secondary);
+  padding: 0.125rem 0.25rem;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.preview-content pre {
+  background-color: var(--bg-secondary);
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.preview-content pre code {
+  background: none;
+  padding: 0;
+}
+
