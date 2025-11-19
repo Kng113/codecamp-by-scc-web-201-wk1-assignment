@@ -55,3 +55,13 @@ export type ToastMessage = {
   type: 'info' | 'success' | 'error'
 }
 
+/**
+ * Result type for analytics operations that don't modify text
+ * These operations return toast messages instead of text changes
+ */
+export type AnalyticsResult = {
+  toast: ToastMessage
+  newText: string // unchanged text
+  newSelection: SelectionRange // unchanged selection
+}
+
