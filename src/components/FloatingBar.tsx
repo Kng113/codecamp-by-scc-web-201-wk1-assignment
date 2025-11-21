@@ -13,12 +13,12 @@ import './FloatingBar.css'
 
 // TODO: Import operations as you implement them
 // Example:
-// import {
-//   reverseSelection,
-//   toUpper,
-//   toLower,
-//   // ... add more as you implement them
-// } from '../lib/stringOps'
+import {
+  reverseSelection,
+  toUpper,
+  toLower,
+  // ... add more as you implement them
+} from '../lib/stringOps'
 
 type FloatingBarProps = {
   onApplyOp: (op: RangeOp, opName: string) => void
@@ -27,14 +27,17 @@ type FloatingBarProps = {
 export default function FloatingBar({ onApplyOp: _onApplyOp }: FloatingBarProps) {
   // TODO: Create handler functions that map button clicks to operations
   // Example:
-  // const handleReverse = () => _onApplyOp(reverseSelection, 'Reverse')
+  const handleReverse = () => _onApplyOp(reverseSelection, 'Reverse')
   // const handleUpper = () => _onApplyOp(toUpper, 'UPPERCASE')
   
   const handleOp = (opName: string) => {
     // TODO: Replace this with actual operation calls
     // For now, this is a placeholder
     console.log(`TODO: Wire up ${opName} operation`)
-    alert(`TODO: Implement ${opName} operation`)
+    // alert(`TODO: Implement ${opName} operation`)
+    if(opName === 'Reverse') {
+      handleReverse()
+    }
   }
 
   return (

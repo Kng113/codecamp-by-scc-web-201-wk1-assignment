@@ -88,16 +88,16 @@ export default function App() {
       return
     }
     
-    // TODO: For transform operations, apply the op and update state
-    // const result = _op(text, selection)
-    // setText(result.newText)
-    // setSelection(result.newSelection)
+    // For transform operations, apply the op and update state
+    const result = _op(text, selection)
+    setText(result.newText)
+    setSelection(result.newSelection)
     
-    // TODO: Restore textarea selection
-    // setTimeout(() => {
-    //   editorRef.current?.setSelectionRange(result.newSelection.start, result.newSelection.end)
-    //   editorRef.current?.focus()
-    // }, 0)
+    // Restore textarea selection
+    setTimeout(() => {
+      editorRef.current?.setSelectionRange(result.newSelection.start, result.newSelection.end)
+      editorRef.current?.focus()
+    }, 0)
     
     console.log('TODO: Apply operation:', opName, 'to selection:', selection)
   }

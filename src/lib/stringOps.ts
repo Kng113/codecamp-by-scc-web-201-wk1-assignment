@@ -39,7 +39,7 @@ export const reverseSelection: RangeOp = (input, range) => {
     // TODO: Implement reverse
     // Hint: Use [...text] to handle Unicode/emoji correctly
     // Then reverse() and join('')
-    return text
+    return [...text].reverse().join('');
   })
 }
 
