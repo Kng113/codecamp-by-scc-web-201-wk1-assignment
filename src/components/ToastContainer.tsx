@@ -19,4 +19,3 @@ export default function ToastContainer({ toast, onDismiss }: ToastContainerProps
     </div>
   )
 }
-

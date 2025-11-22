@@ -1,7 +1,7 @@
 /**
  * App Component - Main Application Shell
  * Manages state, mode switching, and orchestrates all components
- * 
+ *
  * TODO: Complete handleApplyOp to:
  * 1. Call the operation function with current text and selection
  * 2. Update text and selection state
@@ -20,6 +20,7 @@ import FloatingBar from '../components/FloatingBar'
 import Metrics from '../components/Metrics'
 import ToastContainer from '../components/ToastContainer'
 import './layout.css'
+import { countVowelsConsonantsSel } from '../lib/stringOps'
 
 export default function App() {
   const [text, setText] = useState('')
@@ -57,24 +58,24 @@ export default function App() {
 
   const handleApplyOp = (_op: RangeOp, opName: string) => {
     // TODO: Implement operation application
-    // 
+    //
     // Steps:
     // 1. Call op(text, selection) to get result
     // 2. For analytics operations (check opName), calculate and show toast
     // 3. For transform operations, update text and selection
     // 4. Restore textarea selection using editorRef.current?.setSelectionRange()
-    
+
     // Analytics operations that need special handling:
     const analyticsOps = ['V/C Count', 'Words#', 'Chars#', 'Palindrome?']
-    
+
     if (analyticsOps.includes(opName)) {
       // TODO: Handle analytics operations
       // Calculate the analytics and show toast
       // Don't modify text
-      
+
       const normalized = normalizeRange(text, selection)
       const { selected } = sliceByRange(text, normalized)
-      
+
       if (opName === 'Words#') {
         const count = countWords(selected || text)
         showToast(`Word count: ${count}`, 'info')
@@ -83,22 +84,27 @@ export default function App() {
         const withoutSpaces = countChars(selected || text, false)
         showToast(`Characters: ${withSpaces} (${withoutSpaces} without spaces)`, 'info')
       }
+      // else if (opName === 'V/C#'){
+      //   const vowels = countVowelsConsonantsSel(selected || text)
+      //   const consonant = countVowelsConsonantsSel(selected || text)
+      //   showToast(`VowelsCharacters: ${vowels} ('Consonents: ${consonant}, 'info')
+      // }
       // TODO: Add handlers for V/C Count and Palindrome?
-      
+
       return
     }
-    
-    // TODO: For transform operations, apply the op and update state
-    // const result = _op(text, selection)
-    // setText(result.newText)
-    // setSelection(result.newSelection)
-    
-    // TODO: Restore textarea selection
-    // setTimeout(() => {
-    //   editorRef.current?.setSelectionRange(result.newSelection.start, result.newSelection.end)
-    //   editorRef.current?.focus()
-    // }, 0)
-    
+
+    // For transform operations, apply the op and update state
+    const result = _op(text, selection)
+    setText(result.newText)
+    setSelection(result.newSelection)
+
+    // Restore textarea selection
+    setTimeout(() => {
+      editorRef.current?.setSelectionRange(result.newSelection.start, result.newSelection.end)
+      editorRef.current?.focus()
+    }, 0)
+
     console.log('TODO: Apply operation:', opName, 'to selection:', selection)
   }
 
@@ -147,10 +153,9 @@ export default function App() {
 
       <footer className="app-footer">
         <p>
-          Built by <strong>[Your Name]</strong> • Code Camp Week 1 Assignment
+          Built by <strong>Karma</strong> • Code Camp Week 1 Assignment
         </p>
       </footer>
     </div>
   )
 }
-

@@ -72,4 +72,3 @@ export function applyToSelection(
   const transformed = transform(selected)
   return glue(before, transformed, after)
 }
-

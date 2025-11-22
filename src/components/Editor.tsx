@@ -17,7 +17,7 @@ type EditorProps = {
 const Editor = forwardRef<HTMLTextAreaElement, EditorProps>(
   ({ text, onTextChange, selection, onSelectionChange }, ref) => {
     const internalRef = useRef<HTMLTextAreaElement>(null)
-    
+
     // Use forwarded ref if provided, otherwise use internal ref
     const textareaRef = (ref as React.RefObject<HTMLTextAreaElement>) || internalRef
 
@@ -69,4 +69,3 @@ const Editor = forwardRef<HTMLTextAreaElement, EditorProps>(
 Editor.displayName = 'Editor'
 
 export default Editor
-

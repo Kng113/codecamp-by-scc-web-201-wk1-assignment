@@ -489,16 +489,16 @@ Example:
 
 ## 👤 Student Info
 
-**Name:** [Your Full Name]  
-**Cohort:** [Your Cohort Name]  
-**Live Demo:** [Your Firebase URL]  
-**GitHub Repo:** [Your forked repo URL]
+**Name:** Karma Namgyal Ghale  
+**Cohort:** Cohort#2  
+**Live Demo:**  to be implemented on the next project.
+**GitHub Repo:** https://github.com/Kng113/codecamp-by-scc-web-201-wk1-assignment
 
 ## 🎯 What I Learned
 
-1. [Add your learnings here after completing the assignment]
-2.
-3.
+1. I learned to wire the ops from stringOps.ts to the floatingBar.tsx.
+2. I learned to map out the connectin of App.tsx, FloatingBar.tsx, and stringOps.ts.
+3. Due to time contrainst and learning from basic js and ts, I couldn't implment all the features i.e. batch 4 and batch 5.
 
 ---
 

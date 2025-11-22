@@ -35,4 +35,3 @@ export default function Preview({ text }: PreviewProps) {
     </div>
   )
 }
-

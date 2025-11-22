@@ -75,4 +75,3 @@ export function computeMetrics(text: string): TextMetrics {
     readingTimeMin: estimateReadingTimeMin(text),
   }
 }
-

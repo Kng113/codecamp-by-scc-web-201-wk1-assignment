@@ -64,4 +64,3 @@ export type AnalyticsResult = {
   newText: string // unchanged text
   newSelection: SelectionRange // unchanged selection
 }
-

@@ -44,9 +44,8 @@
     position: relative;
     flex-direction: column;
   }
-  
+
   .button-group {
     flex-wrap: wrap;
   }
 }
-

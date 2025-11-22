@@ -73,4 +73,3 @@ export function clearAll(): void {
     console.error('Failed to clear storage:', error)
   }
 }
-
