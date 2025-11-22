@@ -93,18 +93,30 @@ export default function App() {
 
       return
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> feat/reverse
     // For transform operations, apply the op and update state
     const result = _op(text, selection)
     setText(result.newText)
     setSelection(result.newSelection)
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> feat/reverse
     // Restore textarea selection
     setTimeout(() => {
       editorRef.current?.setSelectionRange(result.newSelection.start, result.newSelection.end)
       editorRef.current?.focus()
     }, 0)
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> feat/reverse
     console.log('TODO: Apply operation:', opName, 'to selection:', selection)
   }
 

@@ -17,6 +17,7 @@ import {
   reverseSelection,
   toUpper,
   toLower,
+<<<<<<< HEAD
   toTitle,
   toSentenceCase,
   collapseSpaces,
@@ -26,6 +27,8 @@ import {
   uniqueWords,
   toKebab,
   toSnake,
+=======
+>>>>>>> feat/reverse
   // ... add more as you implement them
 } from '../lib/stringOps'
 
@@ -37,6 +40,7 @@ export default function FloatingBar({ onApplyOp: _onApplyOp }: FloatingBarProps)
   // TODO: Create handler functions that map button clicks to operations
   // Example:
   const handleReverse = () => _onApplyOp(reverseSelection, 'Reverse')
+<<<<<<< HEAD
   const handleUpper = () => _onApplyOp(toUpper, 'UPPER')
   const handleLower = () => _onApplyOp(toLower, 'lower')
   const handletoTitle = () => _onApplyOp(toTitle, 'Title')
@@ -57,11 +61,16 @@ export default function FloatingBar({ onApplyOp: _onApplyOp }: FloatingBarProps)
   // const handleLower = () => _onApplyOp(toLower, 'Find/Replace')
   // const handleLower = () => _onApplyOp(toLower, 'Wrap ```')
 
+=======
+  // const handleUpper = () => _onApplyOp(toUpper, 'UPPERCASE')
+  
+>>>>>>> feat/reverse
   const handleOp = (opName: string) => {
     // TODO: Replace this with actual operation calls
     // For now, this is a placeholder
     console.log(`TODO: Wire up ${opName} operation`)
     // alert(`TODO: Implement ${opName} operation`)
+<<<<<<< HEAD
     if (opName === 'Reverse') {
       handleReverse()
     }
@@ -98,6 +107,11 @@ export default function FloatingBar({ onApplyOp: _onApplyOp }: FloatingBarProps)
     if (opName === 'snake_') {
       handleSnake()
     }
+=======
+    if(opName === 'Reverse') {
+      handleReverse()
+    }
+>>>>>>> feat/reverse
   }
 
   return (
