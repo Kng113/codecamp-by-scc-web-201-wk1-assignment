@@ -20,7 +20,7 @@ import FloatingBar from '../components/FloatingBar'
 import Metrics from '../components/Metrics'
 import ToastContainer from '../components/ToastContainer'
 import './layout.css'
-import { countVowelsConsonantsSel } from '../lib/stringOps'
+import { countVowelsConsonantsSel, palindromeCheckSel } from '../lib/stringOps'
 
 export default function App() {
   const [text, setText] = useState('')
@@ -83,40 +83,29 @@ export default function App() {
         const withSpaces = countChars(selected || text, true)
         const withoutSpaces = countChars(selected || text, false)
         showToast(`Characters: ${withSpaces} (${withoutSpaces} without spaces)`, 'info')
+      } else if (opName === 'V/C Count'){
+        //const vowels = 
+        countVowelsConsonantsSel(selected || text, normalized)
+        //const consonant = countVowelsConsonantsSel(selected || text, normalized)
+        showToast(`VowelsCharacters: Consonents: `, 'info')
+      } else if (opName === 'Palindrome?'){
+        palindromeCheckSel(selected || text, normalized)
+        showToast(``, 'info')
       }
-      // else if (opName === 'V/C#'){
-      //   const vowels = countVowelsConsonantsSel(selected || text)
-      //   const consonant = countVowelsConsonantsSel(selected || text)
-      //   showToast(`VowelsCharacters: ${vowels} ('Consonents: ${consonant}, 'info')
-      // }
+
       // TODO: Add handlers for V/C Count and Palindrome?
 
       return
     }
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> feat/reverse
     // For transform operations, apply the op and update state
     const result = _op(text, selection)
     setText(result.newText)
     setSelection(result.newSelection)
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> feat/reverse
     // Restore textarea selection
     setTimeout(() => {
       editorRef.current?.setSelectionRange(result.newSelection.start, result.newSelection.end)
       editorRef.current?.focus()
     }, 0)
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> feat/reverse
     console.log('TODO: Apply operation:', opName, 'to selection:', selection)
   }
 

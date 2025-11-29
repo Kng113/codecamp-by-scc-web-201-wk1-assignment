@@ -17,7 +17,6 @@ import {
   reverseSelection,
   toUpper,
   toLower,
-<<<<<<< HEAD
   toTitle,
   toSentenceCase,
   collapseSpaces,
@@ -27,8 +26,14 @@ import {
   uniqueWords,
   toKebab,
   toSnake,
-=======
->>>>>>> feat/reverse
+  toPascal,
+  toCamel,
+  countVowelsConsonantsSel,
+  wordCountSel,
+  wrapWithCodeBlock,
+  charCountSel,
+  palindromeCheckSel,
+  findReplacePrompt,
   // ... add more as you implement them
 } from '../lib/stringOps'
 
@@ -40,7 +45,6 @@ export default function FloatingBar({ onApplyOp: _onApplyOp }: FloatingBarProps)
   // TODO: Create handler functions that map button clicks to operations
   // Example:
   const handleReverse = () => _onApplyOp(reverseSelection, 'Reverse')
-<<<<<<< HEAD
   const handleUpper = () => _onApplyOp(toUpper, 'UPPER')
   const handleLower = () => _onApplyOp(toLower, 'lower')
   const handletoTitle = () => _onApplyOp(toTitle, 'Title')
@@ -52,25 +56,20 @@ export default function FloatingBar({ onApplyOp: _onApplyOp }: FloatingBarProps)
   const removeDuplicate = () => _onApplyOp(uniqueWords, 'Unique')
   const handleKebab = () => _onApplyOp(toKebab, 'kebab-')
   const handleSnake = () => _onApplyOp(toSnake, 'snake_')
-  // const handleLower = () => _onApplyOp(toLower, 'camel')
-  // const handleLower = () => _onApplyOp(toLower, 'Pascal')
-  // const handleLower = () => _onApplyOp(toLower, 'V/C Count')
-  // const handleLower = () => _onApplyOp(toLower, 'Words#')
-  // const handleLower = () => _onApplyOp(toLower, 'Chars#')
-  // const handleLower = () => _onApplyOp(toLower, 'Palindrome?')
-  // const handleLower = () => _onApplyOp(toLower, 'Find/Replace')
-  // const handleLower = () => _onApplyOp(toLower, 'Wrap ```')
+  const toCam = () => _onApplyOp(toCamel, 'camel')
+  const toPasc = () => _onApplyOp(toPascal, 'Pascal')
+  const countVwConso = () => _onApplyOp(countVowelsConsonantsSel, 'V/C Count')
+  const countWrdSel = () => _onApplyOp(wordCountSel, 'Words#')
+  const countCharSel = () => _onApplyOp(charCountSel, 'Chars#')
+  const chkPalin = () => _onApplyOp(palindromeCheckSel, 'Palindrome?')
+  const findRplc = () => _onApplyOp(findReplacePrompt, 'Find/Replace')
+  const wrapBlock = () => _onApplyOp(wrapWithCodeBlock, 'Wrap ```')
 
-=======
-  // const handleUpper = () => _onApplyOp(toUpper, 'UPPERCASE')
-  
->>>>>>> feat/reverse
   const handleOp = (opName: string) => {
     // TODO: Replace this with actual operation calls
     // For now, this is a placeholder
     console.log(`TODO: Wire up ${opName} operation`)
     // alert(`TODO: Implement ${opName} operation`)
-<<<<<<< HEAD
     if (opName === 'Reverse') {
       handleReverse()
     }
@@ -107,11 +106,31 @@ export default function FloatingBar({ onApplyOp: _onApplyOp }: FloatingBarProps)
     if (opName === 'snake_') {
       handleSnake()
     }
-=======
-    if(opName === 'Reverse') {
-      handleReverse()
+    if (opName === 'Pascal') {
+      toPasc()
     }
->>>>>>> feat/reverse
+    if (opName === 'camel') {
+      toCam()
+    }
+    if (opName === 'V/C Count') {
+      countVwConso()
+    }
+    if (opName === 'Words#') {
+      countWrdSel()
+    }
+    if (opName === 'Char#') {
+      countCharSel()
+    }
+    if (opName === 'Palindrome?') {
+      chkPalin()
+    }
+    if (opName === 'Find/Replace') {
+      findRplc()
+    }
+     if (opName === 'Wrap ```') {
+      wrapBlock()
+    }
+    
   }
 
   return (
